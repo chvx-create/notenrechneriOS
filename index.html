@@ -1,0 +1,229 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2685.6">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+  </style>
+</head>
+<body>
+<p class="p1">&lt;!DOCTYPE html&gt;</p>
+<p class="p1">&lt;html lang="de"&gt;</p>
+<p class="p1">&lt;head&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta charset="UTF-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;title&gt;NotenRechner&lt;/title&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta name="apple-mobile-web-app-capable" content="yes"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;link rel="manifest" href="manifest.json"&gt;</p>
+<p class="p2"><span class="Apple-converted-space">    </span></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;style&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>:root {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>--bg-color: #f2f2f7;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>--card-bg: #ffffff;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>--primary: #007aff;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>--text: #000000;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>--gray: #8e8e93;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>body {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-color: var(--bg-color);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: var(--text);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin: 0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding-bottom: 80px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>h1 { text-align: center; font-size: 24px; margin-bottom: 20px; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.card {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: var(--card-bg);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 12px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 16px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 16px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 0 1px 3px rgba(0,0,0,0.1);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.input-group {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 12px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.input-group label {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: block;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 14px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: var(--gray);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 4px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>input {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>width: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border: 1px solid #d1d1d6;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 8px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 16px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>box-sizing: border-box;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.result {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>text-align: center;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-top: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-weight: bold;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.result-grade {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: var(--primary);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 26px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-top: 8px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* Tab-Bar unten */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.tab-bar {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>position: fixed;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>bottom: 0; left: 0; right: 0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>height: 60px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: #ffffff;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-top: 1px solid #d1d1d6;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>justify-content: space-around;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>align-items: center;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.tab-btn {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: none; border: none;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 16px; color: var(--gray);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>cursor: pointer; padding: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.tab-btn.active { color: var(--primary); font-weight: bold; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.hidden { display: none; }</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* Tabelle im Einstellungs-Tab */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.table-row {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>justify-content: space-between;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>align-items: center;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 8px 0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-bottom: 1px solid #e5e5ea;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.table-row input { width: 70px; text-align: right; }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/style&gt;</p>
+<p class="p1">&lt;/head&gt;</p>
+<p class="p1">&lt;body&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div id="tab-calculator"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;h1&gt;Notenrechner&lt;/h1&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="card"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="input-group"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;label&gt;Gesamtpunktzahl der Arbeit:&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;input type="number" id="max-points" placeholder="z.B. 100" oninput="calculate()"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="input-group"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;label&gt;Erreichte Punkte:&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;input type="number" id="achieved-points" placeholder="z.B. 95" oninput="calculate()"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="card id="result-card" style="display:none;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="result" id="output-percent"&gt;Prozent: --&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="result result-grade" id="output-grade"&gt;Note: --&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div id="tab-settings" class="hidden"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;h1&gt;Notenschlüssel (%)&lt;/h1&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="card" id="settings-list"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="tab-bar"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;button class="tab-btn active" onclick="switchTab('calculator')"&gt;Rechner&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;button class="tab-btn" onclick="switchTab('settings')"&gt;Tabelle&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>// Standard-Notenschlüssel (wie ein Array von Objekten in Java)</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const defaultThresholds = [</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{ name: "sehr gut+", points: 15, min: 95.0 },</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{ name: "sehr gut", points: 14, min: 90.0 },</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{ name: "sehr gut-", points: 13, min: 85.0 },</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{ name: "gut+", points: 12, min: 80.0 },</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{ name: "gut", points: 11, min: 75.0 },</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{ name: "gut-", points: 10, min: 70.0 },</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{ name: "befriedigend+", points: 9, min: 65.0 },</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{ name: "befriedigend", points: 8, min: 60.0 },</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{ name: "befriedigend-", points: 7, min: 55.0 },</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{ name: "ausreichend+", points: 6, min: 50.0 },</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{ name: "ausreichend", points: 5, min: 45.0 },</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{ name: "ausreichend-", points: 4, min: 40.0 },</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{ name: "mangelhaft+", points: 3, min: 33.0 },</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{ name: "mangelhaft", points: 2, min: 27.0 },</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{ name: "mangelhaft-", points: 1, min: 20.0 },</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{ name: "ungenügend", points: 0, min: 0.0 }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>];</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// Laden aus dem Speicher des Handys, falls vorhanden. Sonst Standardwerte.</p>
+<p class="p1"><span class="Apple-converted-space">        </span>let thresholds = JSON.parse(localStorage.getItem('gradeThresholds')) || defaultThresholds;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// Tab-Wechsel Logik</p>
+<p class="p1"><span class="Apple-converted-space">        </span>function switchTab(tab) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('tab-calculator').classList.toggle('hidden', tab !== 'calculator');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('tab-settings').classList.toggle('hidden', tab !== 'settings');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.querySelectorAll('.tab-btn').forEach((btn, idx) =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>btn.classList.toggle('active', (idx === 0 &amp;&amp; tab === 'calculator') || (idx === 1 &amp;&amp; tab === 'settings'));</p>
+<p class="p1"><span class="Apple-converted-space">            </span>});</p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (tab === 'settings') renderSettings();</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// Tabelle in den Einstellungen zeichnen</p>
+<p class="p1"><span class="Apple-converted-space">        </span>function renderSettings() {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const container = document.getElementById('settings-list');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>container.innerHTML = '';</p>
+<p class="p1"><span class="Apple-converted-space">            </span>thresholds.forEach((t, index) =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const row = document.createElement('div');</p>
+<p class="p1"><span class="Apple-converted-space">                </span>row.className = 'table-row';</p>
+<p class="p1"><span class="Apple-converted-space">                </span>row.innerHTML = `</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;span&gt;${t.name} (${t.points})&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;input type="number" step="0.1" value="${t.min}" onchange="updateThreshold(${index}, this.value)"&gt; %</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>`;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>container.appendChild(row);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>});</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// Wert ändern und im Handy speichern</p>
+<p class="p1"><span class="Apple-converted-space">        </span>function updateThreshold(index, value) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>thresholds[index].min = parseFloat(value) || 0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>localStorage.setItem('gradeThresholds', JSON.stringify(thresholds));</p>
+<p class="p1"><span class="Apple-converted-space">            </span>calculate(); // Direkt neu berechnen im Hintergrund</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// Haupt-Rechner Logik</p>
+<p class="p1"><span class="Apple-converted-space">        </span>function calculate() {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const max = parseFloat(document.getElementById('max-points').value);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const achieved = parseFloat(document.getElementById('achieved-points').value);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const resultCard = document.getElementById('result-card');</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (max &gt; 0 &amp;&amp; !isNaN(achieved)) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>resultCard.style.display = 'block';</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const percent = (achieved / max) * 100;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>document.getElementById('output-percent').innerText = `Prozent: ${percent.toFixed(2)}%`;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                </span>// Passende Note suchen (Schleife wie in Java)</p>
+<p class="p1"><span class="Apple-converted-space">                </span>let foundGrade = "ungenügend (0)";</p>
+<p class="p1"><span class="Apple-converted-space">                </span>for (let t of thresholds) {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>if (percent &gt;= t.min) {</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>foundGrade = `${t.name} (${t.points})`;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>break;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">                </span>}</p>
+<p class="p1"><span class="Apple-converted-space">                </span>document.getElementById('output-grade').innerText = `Note: ${foundGrade}`;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>} else {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>resultCard.style.display = 'none';</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// Service Worker für Offline-Modus registrieren</p>
+<p class="p1"><span class="Apple-converted-space">        </span>if ('serviceWorker' in navigator) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>navigator.serviceWorker.register('sw.js');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/script&gt;</p>
+<p class="p1">&lt;/body&gt;</p>
+<p class="p1">&lt;/html&gt;</p>
+</body>
+</html>

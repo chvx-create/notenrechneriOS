@@ -171,7 +171,8 @@
             calculate();
         }
 
-        fnction calculate() {
+        // Hier war der Fehler – jetzt korrekt mit "function" geschrieben:
+        function calculate() {
             const max = parseFloat(document.getElementById('max-points').value);
             const achieved = parseFloat(document.getElementById('achieved-points').value);
             const resultCard = document.getElementById('result-card');
